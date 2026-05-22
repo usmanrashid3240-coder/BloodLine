@@ -4147,133 +4147,100 @@ This typically indicates that your device does not have a healthy Internet conne
           }
         }
       `}),w.jsxs("div",{className:"login-wrapper",children:[w.jsxs("div",{className:"left-panel",children:[w.jsxs("h1",{className:"text-white text-5xl font-[1000] italic leading-tight uppercase tracking-tighter",children:["WELCOME ",w.jsx("br",{})," ",w.jsx("span",{className:"text-red-600",children:"BACK"})]}),w.jsx("p",{className:"text-gray-400 font-bold mt-6 text-xs leading-relaxed uppercase tracking-widest",children:"Log in to manage your donor profile and availability."})]}),w.jsxs("div",{className:"right-panel",children:[w.jsxs("h2",{className:"text-2xl font-[1000] italic uppercase mb-8",children:["USER ",w.jsx("span",{className:"text-red-600",children:"LOGIN"})]}),w.jsxs("form",{onSubmit:l,className:"space-y-6",children:[w.jsx("input",{type:"text",placeholder:"PHONE NUMBER OR EMAIL",onChange:u=>e(u.target.value),required:!0}),w.jsx("input",{type:"password",placeholder:"PASSWORD",onChange:u=>i(u.target.value),required:!0}),w.jsx("button",{type:"submit",className:"bg-red-600 text-white hover:bg-black",children:"SIGN IN"})]}),w.jsxs("p",{className:"text-center text-gray-400 font-bold mt-8 text-xs tracking-widest uppercase",children:["NEW TO BLOODLINE?",w.jsx(Ot,{to:"/register",className:"text-red-600 border-b-2 border-red-600 pb-0.5 ml-1",children:"REGISTER NOW"})]})]})]})]})},SN=()=>{const[n,e]=W.useState([]),[t,i]=W.useState(""),[o,l]=W.useState(!0);W.useEffect(()=>{(async()=>{l(!0);try{const y=(await UP(Hp(Go,"users"))).docs.map(_=>({id:_.id,..._.data()}));e(y)}catch(p){console.error("Firebase Error:",p)}l(!1)})()},[]);const u=n.filter(d=>{const p=t.toLowerCase();return d.name?.toLowerCase().includes(p)||d.city?.toLowerCase().includes(p)||d.bloodGroup?.toLowerCase().includes(p)});return w.jsxs("div",{style:IN.page,children:[w.jsx("style",{children:`
-        *{
-          box-sizing:border-box;
+        * { box-sizing: border-box; }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
         }
 
-        .container{
-          max-width:1200px;
-          margin:0 auto;
+        /* HERO HEADER FIX */
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 40px;
+          flex-wrap: wrap;
+          margin-bottom: 50px;
         }
 
-        .title{
-          font-size:60px;
-          font-weight:900;
-          text-align:center;
+        .textBox {
+          flex: 1;
+          min-width: 280px;
         }
 
-        .subtitle{
-          color:#e2e8f0;
-          text-align:center;
-          font-size:20px;
-          margin-bottom:40px;
+        .title {
+          font-size: 60px;
+          font-weight: 900;
+          line-height: 1.1;
         }
 
-        /* ✅ SEARCH BAR UPDATED */
-        .search{
-          position:relative;
-          max-width:500px;   /* reduced width */
-          margin:0 auto 60px;
+        .subtitle {
+          color: #e2e8f0;
+          font-size: 20px;
+          margin-top: 10px;
         }
 
-        /* desktop right alignment (optional modern feel) */
-        @media (min-width: 992px){
-          .search{
-            margin-left:auto;
-            margin-right:0;
-          }
+        .searchBox {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          min-width: 280px;
         }
 
-        .input{
-          width:100%;
-          padding:22px 30px;
-          border-radius:100px;
-          border:2px solid #ff4d4d;
-          font-size:18px;
-          outline:none;
+        .search {
+          position: relative;
+          width: 100%;
+          max-width: 420px;
         }
 
-        .grid{
-          display:grid;
-          grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-          gap:30px;
+        .input {
+          width: 100%;
+          padding: 18px 22px;
+          border-radius: 100px;
+          border: 2px solid #ff4d4d;
+          font-size: 16px;
+          outline: none;
         }
 
-        .card{
-          background:rgba(255,255,255,0.95);
-          border-radius:35px;
-          padding:35px;
-          text-align:center;
-          box-shadow:0 25px 50px -12px rgba(0,0,0,0.08);
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 30px;
         }
 
-        .button{
-          width:100%;
-          padding:20px;
-          border-radius:20px;
-          background:#0f172a;
-          color:#fff;
-          border:none;
-          font-weight:800;
-          font-size:17px;
-          cursor:pointer;
+        .card {
+          background: rgba(255,255,255,0.95);
+          border-radius: 35px;
+          padding: 35px;
+          text-align: center;
         }
 
-        /* TABLET */
-        @media (max-width: 992px){
-          .title{ font-size:45px; }
-          .input{ font-size:16px; padding:18px 24px; }
-          .card{ padding:30px; }
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px){
-          .page{
-            padding:90px 15px 60px !important;
+        /* MOBILE FIX */
+        @media (max-width: 768px) {
+          .header {
+            flex-direction: column;
+            text-align: center;
           }
 
-          .title{
-            font-size:32px;
-            line-height:1.2;
+          .title {
+            font-size: 34px;
           }
 
-          .subtitle{
-            font-size:16px;
-            margin-bottom:30px;
+          .subtitle {
+            font-size: 16px;
           }
 
-          .search{
-            margin-bottom:40px;
-            max-width:100%;
+          .searchBox {
+            justify-content: center;
+            width: 100%;
           }
 
-          .input{
-            font-size:14px;
-            padding:16px 20px;
-          }
-
-          .grid{
-            grid-template-columns:1fr;
-            gap:20px;
-          }
-
-          .card{
-            padding:25px;
-            border-radius:25px;
-          }
-
-          .button{
-            padding:16px;
-            font-size:15px;
+          .search {
+            max-width: 100%;
           }
         }
-
-        /* SMALL MOBILE */
-        @media (max-width: 480px){
-          .title{ font-size:26px; }
-          .card{ padding:20px; }
-        }
-      `}),w.jsxs("div",{className:"container",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."}),w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, or blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center",fontSize:"20px"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsxs("div",{style:{display:"flex",justifyContent:"space-between",marginBottom:"25px"},children:[w.jsx("div",{style:{background:"#ff4d4d",color:"#fff",padding:"10px 22px",borderRadius:"15px"},children:d.bloodGroup||"N/A"}),w.jsx("div",{style:{width:"12px",height:"12px",background:"#22c55e",borderRadius:"50%"}})]}),w.jsx("h3",{style:{fontSize:"28px",fontWeight:"800"},children:d.name||"Verified Hero"}),w.jsxs("div",{style:{display:"flex",justifyContent:"center",gap:"10px",margin:"25px 0"},children:[w.jsx("span",{children:"🗺️"}),w.jsx("span",{children:d.city||"Online"})]}),w.jsx("button",{className:"button",onClick:()=>d.phone?window.location.href=`tel:${d.phone}`:alert("Phone not shared"),children:"Connect Now"})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff",marginTop:"60px",fontSize:"20px"},children:"No donors active in this area."})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",backgroundImage:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",backgroundSize:"cover",backgroundPosition:"center",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
+      `}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"header",children:[w.jsxs("div",{className:"textBox",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."})]}),w.jsx("div",{className:"searchBox",children:w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})})})]}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsx("h3",{children:d.name}),w.jsx("p",{children:d.city})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff"},children:"No donors found"})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",background:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65))",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
         *{
           box-sizing:border-box;
         }
