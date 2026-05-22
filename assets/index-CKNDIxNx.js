@@ -4169,10 +4169,19 @@ This typically indicates that your device does not have a healthy Internet conne
           margin-bottom:40px;
         }
 
+        /* ✅ SEARCH BAR UPDATED */
         .search{
           position:relative;
-          max-width:650px;
+          max-width:500px;   /* reduced width */
           margin:0 auto 60px;
+        }
+
+        /* desktop right alignment (optional modern feel) */
+        @media (min-width: 992px){
+          .search{
+            margin-left:auto;
+            margin-right:0;
+          }
         }
 
         .input{
@@ -4212,18 +4221,9 @@ This typically indicates that your device does not have a healthy Internet conne
 
         /* TABLET */
         @media (max-width: 992px){
-          .title{
-            font-size:45px;
-          }
-
-          .input{
-            font-size:16px;
-            padding:18px 24px;
-          }
-
-          .card{
-            padding:30px;
-          }
+          .title{ font-size:45px; }
+          .input{ font-size:16px; padding:18px 24px; }
+          .card{ padding:30px; }
         }
 
         /* MOBILE */
@@ -4244,6 +4244,7 @@ This typically indicates that your device does not have a healthy Internet conne
 
           .search{
             margin-bottom:40px;
+            max-width:100%;
           }
 
           .input{
@@ -4269,13 +4270,8 @@ This typically indicates that your device does not have a healthy Internet conne
 
         /* SMALL MOBILE */
         @media (max-width: 480px){
-          .title{
-            font-size:26px;
-          }
-
-          .card{
-            padding:20px;
-          }
+          .title{ font-size:26px; }
+          .card{ padding:20px; }
         }
       `}),w.jsxs("div",{className:"container",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."}),w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, or blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center",fontSize:"20px"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsxs("div",{style:{display:"flex",justifyContent:"space-between",marginBottom:"25px"},children:[w.jsx("div",{style:{background:"#ff4d4d",color:"#fff",padding:"10px 22px",borderRadius:"15px"},children:d.bloodGroup||"N/A"}),w.jsx("div",{style:{width:"12px",height:"12px",background:"#22c55e",borderRadius:"50%"}})]}),w.jsx("h3",{style:{fontSize:"28px",fontWeight:"800"},children:d.name||"Verified Hero"}),w.jsxs("div",{style:{display:"flex",justifyContent:"center",gap:"10px",margin:"25px 0"},children:[w.jsx("span",{children:"🗺️"}),w.jsx("span",{children:d.city||"Online"})]}),w.jsx("button",{className:"button",onClick:()=>d.phone?window.location.href=`tel:${d.phone}`:alert("Phone not shared"),children:"Connect Now"})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff",marginTop:"60px",fontSize:"20px"},children:"No donors active in this area."})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",backgroundImage:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",backgroundSize:"cover",backgroundPosition:"center",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
         *{
