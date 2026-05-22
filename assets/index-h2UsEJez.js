@@ -205,7 +205,7 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
             font-size:10px;
           }
         }
-      `})]}),wS=()=>{const n=Fs();return w.jsxs("footer",{className:"footer",children:[w.jsx("div",{className:"glow"}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"grid",children:[w.jsxs("div",{className:"brand",children:[w.jsxs("div",{className:"logo",onClick:()=>n("/"),children:[w.jsx("div",{className:"icon",children:"❤️"}),w.jsxs("h2",{children:["Blood",w.jsx("span",{children:"Line"})]})]}),w.jsx("p",{className:"desc",children:"Every drop counts. Join our mission to make Pakistan blood-sufficient."}),w.jsxs("div",{className:"newsletter",children:[w.jsx("input",{type:"email",placeholder:"Update and Type E-mail"}),w.jsx("button",{onClick:()=>alert("Subscribed to Newsletter!"),children:"Join"})]})]}),w.jsxs("div",{className:"links",children:[w.jsxs("div",{children:[w.jsx("h4",{children:"Navigation"}),w.jsxs("ul",{children:[w.jsx("li",{onClick:()=>n("/search"),children:"🔴 Find a Donor"}),w.jsx("li",{onClick:()=>n("/register"),children:"⚪ Register as Donor"}),w.jsx("li",{onClick:()=>n("/blood-banks"),children:"⚪ Blood Banks List"})]})]}),w.jsxs("div",{children:[w.jsx("h4",{children:"Availability"}),w.jsxs("ul",{children:[w.jsxs("li",{children:[w.jsx("span",{children:"Mon - Sun"}),w.jsx("span",{className:"green",children:"24 Hours"})]}),w.jsxs("li",{children:[w.jsx("span",{children:"Support"}),w.jsx("span",{children:"Active"})]}),w.jsx("li",{className:"location",children:"📍 Lahore, Pakistan"})]})]})]}),w.jsx("div",{className:"emergency",children:w.jsxs("div",{className:"card",children:[w.jsx("h4",{children:"Emergency Line"}),w.jsx("a",{href:"tel:080078601",children:"0800-78601"}),w.jsxs("div",{className:"social",children:[w.jsx("div",{onClick:()=>window.open("https://facebook.com"),children:"📘"}),w.jsx("div",{onClick:()=>window.open("https://instagram.com"),children:"📸"}),w.jsx("div",{onClick:()=>window.open("https://twitter.com"),children:"🐦"})]})]})})]}),w.jsxs("div",{className:"bottom",children:[w.jsxs("div",{className:"status",children:[w.jsx("span",{className:"dot"}),"All Systems Operational"]}),w.jsxs("div",{className:"legal",children:[w.jsx("span",{onClick:()=>n("/privacy"),children:"Privacy"}),w.jsx("span",{onClick:()=>n("/terms"),children:"Terms"}),w.jsx("span",{onClick:()=>n("/cookies"),children:"Cookies"})]})]})]}),w.jsx("style",{children:`
+      `})]}),wS=()=>{const n=Fs();return w.jsxs("footer",{className:"footer",children:[w.jsx("div",{className:"glow"}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"grid",children:[w.jsxs("div",{className:"brand",children:[w.jsxs("div",{className:"logo",onClick:()=>n("/"),children:[w.jsx("div",{className:"icon",children:"❤️"}),w.jsxs("h2",{children:["Blood",w.jsx("span",{children:"Line"})]})]}),w.jsx("p",{className:"desc",children:"Every drop counts. Join our mission to make Pakistan blood-sufficient."}),w.jsxs("div",{className:"newsletter",children:[w.jsx("input",{type:"email",placeholder:"Update and Type E-mail"}),w.jsx("button",{onClick:()=>alert("Subscribed!"),children:"Join"})]})]}),w.jsxs("div",{className:"links",children:[w.jsxs("div",{children:[w.jsx("h4",{children:"Navigation"}),w.jsxs("ul",{children:[w.jsx("li",{onClick:()=>n("/search"),children:"🔴 Find a Donor"}),w.jsx("li",{onClick:()=>n("/register"),children:"⚪ Register as Donor"}),w.jsx("li",{onClick:()=>n("/blood-banks"),children:"⚪ Blood Banks List"})]})]}),w.jsxs("div",{children:[w.jsx("h4",{children:"Availability"}),w.jsxs("ul",{children:[w.jsxs("li",{children:[w.jsx("span",{children:"Mon - Sun"}),w.jsx("span",{className:"green",children:"24 Hours"})]}),w.jsxs("li",{children:[w.jsx("span",{children:"Support"}),w.jsx("span",{children:"Active"})]}),w.jsx("li",{className:"location",children:"📍 Lahore, Pakistan"})]})]})]}),w.jsx("div",{className:"emergency",children:w.jsxs("div",{className:"card",children:[w.jsx("h4",{children:"Emergency Line"}),w.jsx("a",{href:"tel:080078601",children:"0800-78601"}),w.jsxs("div",{className:"social",children:[w.jsx("div",{onClick:()=>window.open("https://facebook.com"),children:"📘"}),w.jsx("div",{onClick:()=>window.open("https://instagram.com"),children:"📸"}),w.jsx("div",{onClick:()=>window.open("https://twitter.com"),children:"🐦"})]})]})})]}),w.jsxs("div",{className:"bottom",children:[w.jsxs("div",{className:"status",children:[w.jsx("span",{className:"dot"}),"All Systems Operational"]}),w.jsxs("div",{className:"legal",children:[w.jsx("span",{onClick:()=>n("/privacy"),children:"Privacy"}),w.jsx("span",{onClick:()=>n("/terms"),children:"Terms"}),w.jsx("span",{onClick:()=>n("/cookies"),children:"Cookies"})]})]})]}),w.jsx("style",{children:`
         *{ box-sizing:border-box; }
 
         .footer{
@@ -334,9 +334,7 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
           color:#e63946;
         }
 
-        .green{
-          color:#22c55e;
-        }
+        .green{ color:#22c55e; }
 
         .emergency .card{
           background:linear-gradient(145deg,#1a1f26,#0b0c0e);
@@ -370,6 +368,7 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
           cursor:pointer;
         }
 
+        /* ✅ FIXED BOTTOM BAR */
         .bottom{
           display:flex;
           justify-content:space-between;
@@ -409,30 +408,16 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
           cursor:pointer;
         }
 
-        /* TABLET */
-        @media (max-width: 992px){
-          .grid{
-            grid-template-columns:1fr 1fr;
-          }
+        @keyframes pulse{
+          0%{transform:scale(1); opacity:1;}
+          50%{transform:scale(1.4); opacity:0.6;}
+          100%{transform:scale(1); opacity:1;}
         }
 
         /* MOBILE */
         @media (max-width: 768px){
           .grid{
             grid-template-columns:1fr;
-            gap:40px;
-          }
-
-          .links{
-            grid-template-columns:1fr;
-          }
-
-          .logo h2{
-            font-size:22px;
-          }
-
-          .emergency a{
-            font-size:22px;
           }
 
           .bottom{
@@ -442,28 +427,7 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
 
           .legal{
             flex-wrap:wrap;
-            gap:15px;
           }
-        }
-
-        @media (max-width: 480px){
-          .footer{
-            padding:80px 15px 30px;
-          }
-
-          .newsletter input{
-            font-size:12px;
-          }
-
-          .newsletter button{
-            font-size:10px;
-          }
-        }
-
-        @keyframes pulse{
-          0%{transform:scale(1); opacity:1;}
-          50%{transform:scale(1.4); opacity:0.6;}
-          100%{transform:scale(1); opacity:1;}
         }
       `})]})},ES=({onFinish:n})=>{const[e,t]=W.useState(!1),i=()=>{t(!0),setTimeout(()=>{n()},800)};return w.jsxs(w.Fragment,{children:[w.jsx("style",{children:`
           .splash-container {
@@ -4147,14 +4111,16 @@ This typically indicates that your device does not have a healthy Internet conne
           }
         }
       `}),w.jsxs("div",{className:"login-wrapper",children:[w.jsxs("div",{className:"left-panel",children:[w.jsxs("h1",{className:"text-white text-5xl font-[1000] italic leading-tight uppercase tracking-tighter",children:["WELCOME ",w.jsx("br",{})," ",w.jsx("span",{className:"text-red-600",children:"BACK"})]}),w.jsx("p",{className:"text-gray-400 font-bold mt-6 text-xs leading-relaxed uppercase tracking-widest",children:"Log in to manage your donor profile and availability."})]}),w.jsxs("div",{className:"right-panel",children:[w.jsxs("h2",{className:"text-2xl font-[1000] italic uppercase mb-8",children:["USER ",w.jsx("span",{className:"text-red-600",children:"LOGIN"})]}),w.jsxs("form",{onSubmit:l,className:"space-y-6",children:[w.jsx("input",{type:"text",placeholder:"PHONE NUMBER OR EMAIL",onChange:u=>e(u.target.value),required:!0}),w.jsx("input",{type:"password",placeholder:"PASSWORD",onChange:u=>i(u.target.value),required:!0}),w.jsx("button",{type:"submit",className:"bg-red-600 text-white hover:bg-black",children:"SIGN IN"})]}),w.jsxs("p",{className:"text-center text-gray-400 font-bold mt-8 text-xs tracking-widest uppercase",children:["NEW TO BLOODLINE?",w.jsx(Ot,{to:"/register",className:"text-red-600 border-b-2 border-red-600 pb-0.5 ml-1",children:"REGISTER NOW"})]})]})]})]})},SN=()=>{const[n,e]=W.useState([]),[t,i]=W.useState(""),[o,l]=W.useState(!0);W.useEffect(()=>{(async()=>{l(!0);try{const y=(await UP(Hp(Go,"users"))).docs.map(_=>({id:_.id,..._.data()}));e(y)}catch(p){console.error("Firebase Error:",p)}l(!1)})()},[]);const u=n.filter(d=>{const p=t.toLowerCase();return d.name?.toLowerCase().includes(p)||d.city?.toLowerCase().includes(p)||d.bloodGroup?.toLowerCase().includes(p)});return w.jsxs("div",{style:IN.page,children:[w.jsx("style",{children:`
-        * { box-sizing: border-box; }
+        * {
+          box-sizing: border-box;
+        }
 
         .container {
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        /* HERO HEADER FIX */
+        /* HEADER */
         .header {
           display: flex;
           justify-content: space-between;
@@ -4181,28 +4147,30 @@ This typically indicates that your device does not have a healthy Internet conne
           margin-top: 10px;
         }
 
+        /* SEARCH FIX */
         .searchBox {
           flex: 1;
           display: flex;
           justify-content: flex-end;
+          align-items: center;
           min-width: 280px;
         }
 
         .search {
-          position: relative;
           width: 100%;
-          max-width: 420px;
+          max-width: 520px;
         }
 
         .input {
           width: 100%;
-          padding: 18px 22px;
+          padding: 20px 26px;
           border-radius: 100px;
           border: 2px solid #ff4d4d;
           font-size: 16px;
           outline: none;
         }
 
+        /* GRID */
         .grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -4216,7 +4184,7 @@ This typically indicates that your device does not have a healthy Internet conne
           text-align: center;
         }
 
-        /* MOBILE FIX */
+        /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
           .header {
             flex-direction: column;
@@ -4240,7 +4208,7 @@ This typically indicates that your device does not have a healthy Internet conne
             max-width: 100%;
           }
         }
-      `}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"header",children:[w.jsxs("div",{className:"textBox",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."})]}),w.jsx("div",{className:"searchBox",children:w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})})})]}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsx("h3",{children:d.name}),w.jsx("p",{children:d.city})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff"},children:"No donors found"})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",background:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65))",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
+      `}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"header",children:[w.jsxs("div",{className:"textBox",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."})]}),w.jsx("div",{className:"searchBox",children:w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})})})]}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsx("h3",{style:{fontSize:"22px",fontWeight:"800"},children:d.name}),w.jsx("p",{style:{marginTop:"10px"},children:d.city})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff"},children:"No donors found"})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",background:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65))",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
         *{
           box-sizing:border-box;
         }
