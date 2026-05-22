@@ -368,7 +368,6 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
           cursor:pointer;
         }
 
-        /* ✅ FIXED BOTTOM BAR */
         .bottom{
           display:flex;
           justify-content:space-between;
@@ -414,10 +413,23 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
           100%{transform:scale(1); opacity:1;}
         }
 
-        /* MOBILE */
+        /* MOBILE RESPONSIVE */
         @media (max-width: 768px){
           .grid{
             grid-template-columns:1fr;
+            gap:40px;
+          }
+
+          .links{
+            grid-template-columns:1fr;
+          }
+
+          .logo h2{
+            font-size:22px;
+          }
+
+          .emergency a{
+            font-size:22px;
           }
 
           .bottom{
@@ -427,6 +439,21 @@ Please change the parent <Route path="${J}"> to <Route path="${J==="/"?"*":`${J}
 
           .legal{
             flex-wrap:wrap;
+            gap:15px;
+          }
+        }
+
+        @media (max-width: 480px){
+          .footer{
+            padding:80px 15px 30px;
+          }
+
+          .newsletter input{
+            font-size:12px;
+          }
+
+          .newsletter button{
+            font-size:10px;
           }
         }
       `})]})},ES=({onFinish:n})=>{const[e,t]=W.useState(!1),i=()=>{t(!0),setTimeout(()=>{n()},800)};return w.jsxs(w.Fragment,{children:[w.jsx("style",{children:`
@@ -4111,104 +4138,34 @@ This typically indicates that your device does not have a healthy Internet conne
           }
         }
       `}),w.jsxs("div",{className:"login-wrapper",children:[w.jsxs("div",{className:"left-panel",children:[w.jsxs("h1",{className:"text-white text-5xl font-[1000] italic leading-tight uppercase tracking-tighter",children:["WELCOME ",w.jsx("br",{})," ",w.jsx("span",{className:"text-red-600",children:"BACK"})]}),w.jsx("p",{className:"text-gray-400 font-bold mt-6 text-xs leading-relaxed uppercase tracking-widest",children:"Log in to manage your donor profile and availability."})]}),w.jsxs("div",{className:"right-panel",children:[w.jsxs("h2",{className:"text-2xl font-[1000] italic uppercase mb-8",children:["USER ",w.jsx("span",{className:"text-red-600",children:"LOGIN"})]}),w.jsxs("form",{onSubmit:l,className:"space-y-6",children:[w.jsx("input",{type:"text",placeholder:"PHONE NUMBER OR EMAIL",onChange:u=>e(u.target.value),required:!0}),w.jsx("input",{type:"password",placeholder:"PASSWORD",onChange:u=>i(u.target.value),required:!0}),w.jsx("button",{type:"submit",className:"bg-red-600 text-white hover:bg-black",children:"SIGN IN"})]}),w.jsxs("p",{className:"text-center text-gray-400 font-bold mt-8 text-xs tracking-widest uppercase",children:["NEW TO BLOODLINE?",w.jsx(Ot,{to:"/register",className:"text-red-600 border-b-2 border-red-600 pb-0.5 ml-1",children:"REGISTER NOW"})]})]})]})]})},SN=()=>{const[n,e]=W.useState([]),[t,i]=W.useState(""),[o,l]=W.useState(!0);W.useEffect(()=>{(async()=>{l(!0);try{const y=(await UP(Hp(Go,"users"))).docs.map(_=>({id:_.id,..._.data()}));e(y)}catch(p){console.error("Firebase Error:",p)}l(!1)})()},[]);const u=n.filter(d=>{const p=t.toLowerCase();return d.name?.toLowerCase().includes(p)||d.city?.toLowerCase().includes(p)||d.bloodGroup?.toLowerCase().includes(p)});return w.jsxs("div",{style:IN.page,children:[w.jsx("style",{children:`
-        * {
-          box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
 
         /* HEADER */
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 40px;
-          flex-wrap: wrap;
-          margin-bottom: 50px;
-        }
+        .header { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 50px; }
+        .textBox { flex: 1; min-width: 280px; }
+        .title { font-size: 60px; font-weight: 900; line-height: 1.1; }
+        .subtitle { color: #e2e8f0; font-size: 20px; margin-top: 10px; }
 
-        .textBox {
-          flex: 1;
-          min-width: 280px;
-        }
-
-        .title {
-          font-size: 60px;
-          font-weight: 900;
-          line-height: 1.1;
-        }
-
-        .subtitle {
-          color: #e2e8f0;
-          font-size: 20px;
-          margin-top: 10px;
-        }
-
-        /* SEARCH FIX */
-        .searchBox {
-          flex: 1;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          min-width: 280px;
-        }
-
-        .search {
-          width: 100%;
-          max-width: 520px;
-        }
-
-        .input {
-          width: 100%;
-          padding: 20px 26px;
-          border-radius: 100px;
-          border: 2px solid #ff4d4d;
-          font-size: 16px;
-          outline: none;
-        }
+        /* SEARCH */
+        .searchBox { flex: 1; display: flex; justify-content: flex-end; align-items: center; min-width: 280px; }
+        .search { width: 100%; max-width: 520px; }
+        .input { width: 100%; padding: 20px 26px; border-radius: 100px; border: 2px solid #ff4d4d; font-size: 16px; outline: none; }
 
         /* GRID */
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-          gap: 30px;
-        }
-
-        .card {
-          background: rgba(255,255,255,0.95);
-          border-radius: 35px;
-          padding: 35px;
-          text-align: center;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: rgba(255,255,255,0.95); border-radius: 35px; padding: 35px; text-align: center; }
 
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
-          .header {
-            flex-direction: column;
-            text-align: center;
-          }
-
-          .title {
-            font-size: 34px;
-          }
-
-          .subtitle {
-            font-size: 16px;
-          }
-
-          .searchBox {
-            justify-content: center;
-            width: 100%;
-          }
-
-          .search {
-            max-width: 100%;
-          }
+          .header { flex-direction: column; text-align: center; }
+          .title { font-size: 34px; }
+          .subtitle { font-size: 16px; }
+          .searchBox { justify-content: center; width: 100%; }
+          .search { max-width: 100%; }
         }
-      `}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"header",children:[w.jsxs("div",{className:"textBox",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."})]}),w.jsx("div",{className:"searchBox",children:w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})})})]}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsx("h3",{style:{fontSize:"22px",fontWeight:"800"},children:d.name}),w.jsx("p",{style:{marginTop:"10px"},children:d.city})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff"},children:"No donors found"})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",background:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65))",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
+      `}),w.jsxs("div",{className:"container",children:[w.jsxs("div",{className:"header",children:[w.jsxs("div",{className:"textBox",children:[w.jsxs("h1",{className:"title",children:[w.jsx("span",{style:{color:"#fff"},children:"Global "}),w.jsx("span",{style:{color:"#ff4d4d"},children:"Hero Network"})]}),w.jsx("p",{className:"subtitle",children:"Live tracking verified blood donors across the globe."})]}),w.jsx("div",{className:"searchBox",children:w.jsx("div",{className:"search",children:w.jsx("input",{type:"text",placeholder:"Search by city, name, blood group...",value:t,onChange:d=>i(d.target.value),className:"input"})})})]}),o?w.jsx("div",{style:{color:"#ff4d4d",textAlign:"center",fontSize:"20px"},children:"Accessing GPS Data..."}):u.length>0?w.jsx("div",{className:"grid",children:u.map(d=>w.jsxs("div",{className:"card",children:[w.jsxs("div",{style:{display:"flex",justifyContent:"space-between",marginBottom:"25px"},children:[w.jsx("div",{style:{background:"#ff4d4d",color:"#fff",padding:"10px 22px",borderRadius:"15px"},children:d.bloodGroup||"N/A"}),w.jsx("div",{style:{width:"12px",height:"12px",background:"#22c55e",borderRadius:"50%"}})]}),w.jsx("h3",{style:{fontSize:"22px",fontWeight:"800"},children:d.name}),w.jsx("p",{style:{marginTop:"10px"},children:d.city}),w.jsx("button",{style:{marginTop:"15px",width:"100%",padding:"16px",borderRadius:"20px",background:"#0f172a",color:"#fff",border:"none",fontWeight:"800",cursor:"pointer"},onClick:()=>d.phone?window.location.href=`tel:${d.phone}`:alert("Phone not shared"),children:"Connect Now"})]},d.id))}):w.jsx("div",{style:{textAlign:"center",color:"#fff",marginTop:"60px",fontSize:"20px"},children:"No donors found"})]})]})},IN={page:{minHeight:"100vh",padding:"120px 20px 80px",backgroundImage:"linear-gradient(rgba(10,15,26,0.55), rgba(10,15,26,0.65)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",backgroundSize:"cover",backgroundPosition:"center",fontFamily:"'Inter', sans-serif"}},RN=()=>{const[n,e]=W.useState([]),t=Fs(),i=Qi();return W.useEffect(()=>{const o=LP(Hp(Go,"requests"),VP("createdAt","desc"),MP(5)),l=HP(o,u=>{const d=u.docs.map(p=>({id:p.id,...p.data()}));e(d)});return()=>l()},[]),w.jsxs("div",{className:"app-container",children:[w.jsx("style",{children:`
         *{
           box-sizing:border-box;
         }
